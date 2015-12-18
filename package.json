@@ -1,0 +1,32 @@
+{
+  "name": "react-native-social-auth",
+  "version": "0.1.0",
+  "description": "React Native module provides auth methods via social networks using native APIs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xxsnakerxx/react-native-social-auth.git"
+  },
+  "keywords": [
+    "react-native",
+    "module",
+    "auth",
+    "ios",
+    "android",
+    "facebook",
+    "twitter",
+    "native"
+  ],
+  "author": "Dmitriy Kolesnikov <xxsnakerxx@gmail.com> (https://github.com/xxsnakerxx)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xxsnakerxx/react-native-social-auth/issues"
+  },
+  "homepage": "https://github.com/xxsnakerxx/react-native-social-auth#readme",
+  "peerDependencies": {
+    "react-native": ">=0.16.0"
+  }
+}
