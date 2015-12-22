@@ -1,3 +1,6 @@
 rootProject.name = 'socialAuthExample'
 
 include ':app'
+
+include ':react-native-social-auth'
+project(':react-native-social-auth').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-social-auth/android')

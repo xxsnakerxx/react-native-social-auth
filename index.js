@@ -14,7 +14,8 @@ export default class SocialAuth {
 
   static getTwitterSystemAccounts(cb = () => {}) {
     if (React.Platform.OS === 'android') {
-      throw new Error('SocialAuth.getTwitterSystemAccounts is not supported for android');
+      console.warn('SocialAuth.getTwitterSystemAccounts is not supported for android');
+      return;
     }
 
     RNSocialAuthManager.getTwitterSystemAccounts(cb);
@@ -22,7 +23,8 @@ export default class SocialAuth {
 
   static getTwitterCredentials(userName = null, reverseAuthResponse = '', cb = () => {}) {
     if (React.Platform.OS === 'android') {
-      throw new Error('SocialAuth.getTwitterCredentials is not supported for android');
+      console.warn();('SocialAuth.getTwitterCredentials is not supported for android');
+      return;
     }
 
     if (arguments.length === 2) {
