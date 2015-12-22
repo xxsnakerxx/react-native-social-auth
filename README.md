@@ -9,8 +9,8 @@
 - [What using](#what-using)
 - [Installation](#installation)
   - [Common](#common)
-  - [iOS](ios)
-  - [Android](android)
+  - [iOS](ios#readme)
+  - [Android](android#readme)
 - [Usage](#usage)
 - [Contributing](#contributing)
 - [Copyright and license](#copyright-and-license)
@@ -31,8 +31,8 @@ npm install react-native-social-auth
 ```
 
 2. Perform platform specific setup
-  - [iOS](ios)
-  - [Android](android)
+  - [iOS](ios#readme)
+  - [Android](android#readme)
 
 3. Inside your code include JS part by adding
 
