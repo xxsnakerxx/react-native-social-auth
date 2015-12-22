@@ -21,7 +21,10 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
-		53C87EC31C23F11B0000E150 /* libRNSocialAuth.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 53C87EC21C23F10C0000E150 /* libRNSocialAuth.a */; };
+		53417E091C244B0000E23C1C /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53417E071C244B0000E23C1C /* FBSDKCoreKit.framework */; };
+		53417E0A1C244B0000E23C1C /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53417E081C244B0000E23C1C /* FBSDKLoginKit.framework */; };
+		53417E1B1C2455E800E23C1C /* libRNSocialAuth.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 53417E1A1C2455D700E23C1C /* libRNSocialAuth.a */; };
+		539642F81C2802660058F7DD /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 539642F71C2802660058F7DD /* Accounts.framework */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 /* End PBXBuildFile section */
 
@@ -89,9 +92,9 @@
 			remoteGlobalIDString = 83CBBA2E1A601D0E00E9B192;
 			remoteInfo = React;
 		};
-		53C87EC11C23F10C0000E150 /* PBXContainerItemProxy */ = {
+		53417E191C2455D700E23C1C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 53C87EB31C23F10C0000E150 /* RNSocialAuth.xcodeproj */;
+			containerPortal = 53417E151C2455D700E23C1C /* RNSocialAuth.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 533DBF7D1C23D77400AE7307;
 			remoteInfo = RNSocialAuth;
@@ -132,7 +135,10 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = socialAuthExample/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = socialAuthExample/main.m; sourceTree = "<group>"; };
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
-		53C87EB31C23F10C0000E150 /* RNSocialAuth.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNSocialAuth.xcodeproj; path = ../../ios/RNSocialAuth.xcodeproj; sourceTree = "<group>"; };
+		53417E071C244B0000E23C1C /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../ios/FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		53417E081C244B0000E23C1C /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../ios/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		53417E151C2455D700E23C1C /* RNSocialAuth.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNSocialAuth.xcodeproj; path = "../node_modules/react-native-social-auth/ios/RNSocialAuth.xcodeproj"; sourceTree = "<group>"; };
+		539642F71C2802660058F7DD /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -149,12 +155,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				53C87EC31C23F11B0000E150 /* libRNSocialAuth.a in Frameworks */,
+				539642F81C2802660058F7DD /* Accounts.framework in Frameworks */,
+				53417E1B1C2455E800E23C1C /* libRNSocialAuth.a in Frameworks */,
+				53417E091C244B0000E23C1C /* FBSDKCoreKit.framework in Frameworks */,
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
 				00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */,
 				00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */,
 				00C302E81ABCBA2D00DB3ED1 /* libRCTImage.a in Frameworks */,
 				133E29F31AD74F7200F7D852 /* libRCTLinking.a in Frameworks */,
+				53417E0A1C244B0000E23C1C /* FBSDKLoginKit.framework in Frameworks */,
 				00C302E91ABCBA2D00DB3ED1 /* libRCTNetwork.a in Frameworks */,
 				139105C61AF99C1200B5F7CC /* libRCTSettings.a in Frameworks */,
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
@@ -261,10 +270,10 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		53C87EB41C23F10C0000E150 /* Products */ = {
+		53417E161C2455D700E23C1C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				53C87EC21C23F10C0000E150 /* libRNSocialAuth.a */,
+				53417E1A1C2455D700E23C1C /* libRNSocialAuth.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -280,7 +289,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				53C87EB31C23F10C0000E150 /* RNSocialAuth.xcodeproj */,
+				53417E151C2455D700E23C1C /* RNSocialAuth.xcodeproj */,
 				146833FF1AC3E56700842450 /* React.xcodeproj */,
 				00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */,
 				00C302B51ABCB90400DB3ED1 /* RCTGeolocation.xcodeproj */,
@@ -306,6 +315,9 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				539642F71C2802660058F7DD /* Accounts.framework */,
+				53417E071C244B0000E23C1C /* FBSDKCoreKit.framework */,
+				53417E081C244B0000E23C1C /* FBSDKLoginKit.framework */,
 				13B07FAE1A68108700A75B9A /* socialAuthExample */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* socialAuthExampleTests */,
@@ -431,8 +443,8 @@
 					ProjectRef = 146833FF1AC3E56700842450 /* React.xcodeproj */;
 				},
 				{
-					ProductGroup = 53C87EB41C23F10C0000E150 /* Products */;
-					ProjectRef = 53C87EB31C23F10C0000E150 /* RNSocialAuth.xcodeproj */;
+					ProductGroup = 53417E161C2455D700E23C1C /* Products */;
+					ProjectRef = 53417E151C2455D700E23C1C /* RNSocialAuth.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -500,11 +512,11 @@
 			remoteRef = 146834031AC3E56700842450 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		53C87EC21C23F10C0000E150 /* libRNSocialAuth.a */ = {
+		53417E1A1C2455D700E23C1C /* libRNSocialAuth.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libRNSocialAuth.a;
-			remoteRef = 53C87EC11C23F10C0000E150 /* PBXContainerItemProxy */;
+			remoteRef = 53417E191C2455D700E23C1C /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		78C398B91ACF4ADC00677621 /* libRCTLinking.a */ = {
@@ -642,15 +654,20 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEAD_CODE_STRIPPING = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../../ios/FacebookSDK";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../node_modules/react-native/React/**",
+					"$(SRCROOT)/../node_modules/react-native-social-auth/**",
 				);
 				INFOPLIST_FILE = socialAuthExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = socialAuthExample;
+				SDKROOT = iphoneos9.2;
 			};
 			name = Debug;
 		};
@@ -658,15 +675,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../../ios/FacebookSDK";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../node_modules/react-native/React/**",
+					"$(SRCROOT)/../node_modules/react-native-social-auth/**",
 				);
 				INFOPLIST_FILE = socialAuthExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = socialAuthExample;
+				SDKROOT = iphoneos9.2;
 			};
 			name = Release;
 		};
