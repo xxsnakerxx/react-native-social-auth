@@ -26,7 +26,4 @@
     "url": "https://github.com/xxsnakerxx/react-native-social-auth/issues"
   },
   "homepage": "https://github.com/xxsnakerxx/react-native-social-auth#readme",
-  "peerDependencies": {
-    "react-native": ">=0.16.0"
-  }
 }
