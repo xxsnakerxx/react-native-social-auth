@@ -17,7 +17,8 @@ export default class SocialAuth {
     if (app.id !== _app.id && app.name !== _app.name) {
       RNSocialAuthManager.setFacebookApp({id: `${app.id}`, name: `${app.name}`});
 
-      _app = app;
+      _app.id = app.id;
+      _app.name = app.name;
     }
   }
 
