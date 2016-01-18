@@ -56,6 +56,11 @@ RCT_EXPORT_MODULE()
              };
 };
 
+RCT_EXPORT_METHOD(setFacebookApp:(NSDictionary *)app) {
+    [FBSDKSettings setAppID:app[@"id"]];
+    [FBSDKSettings setDisplayName:app[@"name"]];
+}
+
 
 RCT_EXPORT_METHOD(getFacebookCredentials:(NSArray*)permissions
                   permissionsType:(NSString *)permissionsType

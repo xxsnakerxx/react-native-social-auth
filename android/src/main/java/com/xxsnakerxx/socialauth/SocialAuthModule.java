@@ -11,6 +11,7 @@ import com.facebook.CallbackManager;
 import com.facebook.FacebookAuthorizationException;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
+import com.facebook.FacebookSdk;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 
@@ -22,6 +23,7 @@ import com.facebook.react.bridge.ReactContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.ReadableArray;
+import com.facebook.react.bridge.ReadableMap;
 import com.facebook.react.bridge.WritableMap;
 
 import java.util.ArrayList;
@@ -122,6 +124,12 @@ public class SocialAuthModule extends ReactContextBaseJavaModule {
     constants.put("facebookPermissionsType", facebookPermissionsType);
 
     return constants;
+  }
+
+  @ReactMethod
+  public void setFacebookApp(ReadableMap app) {
+    FacebookSdk.setApplicationId(app.getString("id"));
+    FacebookSdk.setApplicationName(app.getString("name"));
   }
 
   @ReactMethod

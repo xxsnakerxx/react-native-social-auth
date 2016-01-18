@@ -12,6 +12,7 @@
 
 ### Facebook
 8. Configure your `.plist` file as described [here](https://developers.facebook.com/docs/ios/getting-started/#xcode) and [here(__for iOS9 only__)](https://developers.facebook.com/docs/ios/ios9)
+ or you can use `setFacebookApp` method provided the API
 9. Under `Build Settings` of your main project scroll down to `Search Paths`
 10. Add the following path to your `Header Search Paths`
 ```

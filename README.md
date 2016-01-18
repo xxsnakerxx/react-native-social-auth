@@ -48,6 +48,11 @@ npm install react-native-social-auth
   - `SocialAuth.facebookPermissionsType.read`
   - `SocialAuth.facebookPermissionsType.write`
 
+#### setFacebookApp({id, name})
+```javascript
+
+SocialAuth.setFacebookApp({id: 'APP_ID', name: 'DISPLAY_NAME'});
+```
 
 #### getFacebookCredentials(permissions, permissionsType, cb)
   - `permissions` (Array of strings)

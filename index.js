@@ -3,7 +3,24 @@ import React from 'react-native';
 const { NativeModules } = React;
 const { RNSocialAuthManager } = NativeModules;
 
+const _app = {
+  id: '',
+  name: '',
+}
+
 export default class SocialAuth {
+  static setFacebookApp(app) {
+    if (!app.id || !app.name) {
+      throw new Error('SocialAuth:setFacebookApp: id and name keys are required');
+    }
+
+    if (app.id !== _app.id && app.name !== _app.name) {
+      RNSocialAuthManager.setFacebookApp({id: `${app.id}`, name: `${app.name}`});
+
+      _app = app;
+    }
+  }
+
   static getFacebookCredentials(
     permissions = ['email'],
     permissionsType = SocialAuth.facebookPermissionsType.read,
