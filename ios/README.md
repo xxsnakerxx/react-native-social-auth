@@ -13,6 +13,7 @@
 ### Facebook
 8. Configure your `.plist` file as described [here](https://developers.facebook.com/docs/ios/getting-started/#xcode) and [here(__for iOS9 only__)](https://developers.facebook.com/docs/ios/ios9)
  or you can use `setFacebookApp` method provided the API
+ (__Using `setFacebookApp` method you are still must define custom URL scheme in your `info.plist`!!! If you are using a few environments (e.g. staging, production) you can define URL Schemes(`'fb'+APP_ID` string) for both of them and set needed app id and name using this method__)
 9. Under `Build Settings` of your main project scroll down to `Search Paths`
 10. Add the following path to your `Header Search Paths`
 ```
