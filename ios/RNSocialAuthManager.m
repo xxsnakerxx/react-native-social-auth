@@ -306,10 +306,17 @@ RCT_EXPORT_METHOD(getTwitterCredentials:(NSString *)userName
                     [accessTokenRequest performRequestWithHandler:^(NSData *responseData, NSHTTPURLResponse *urlResponse, NSError *error) {
                         
                         if (error || [urlResponse statusCode] != 200 ) {
-                            callback(@[@{
-                                           @"code": @(error.code),
-                                           @"message": error.localizedDescription
-                                           }, [NSNull null]]);
+                            if (error) {
+                                callback(@[@{
+                                               @"code": @(error.code),
+                                               @"message": error.localizedDescription
+                                               }, [NSNull null]]);
+                            } else {
+                                callback(@[@{
+                                               @"code": @-3,
+                                               @"message": [NSString stringWithFormat:@"SLRequest failed with status %ld", (long)[urlResponse statusCode]]
+                                               }, [NSNull null]]);
+                            }
                         }
                         else {
                             NSString *responseStr = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
