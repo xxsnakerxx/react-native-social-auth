@@ -1,6 +1,6 @@
 {
   "name": "react-native-social-auth",
-  "version": "0.2.3",
+  "version": "0.3.0",
   "description": "React Native module provides auth methods via social networks using native APIs",
   "main": "index.js",
   "scripts": {
