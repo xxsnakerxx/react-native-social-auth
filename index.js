@@ -24,34 +24,58 @@ export default class SocialAuth {
 
   static getFacebookCredentials(
     permissions = ['email'],
-    permissionsType = SocialAuth.facebookPermissionsType.read,
-    cb = () => {}) {
+    permissionsType = SocialAuth.facebookPermissionsType.read) {
 
-    RNSocialAuthManager.getFacebookCredentials(permissions, permissionsType, cb);
+    return new Promise((resolve, reject) => {
+        RNSocialAuthManager.getFacebookCredentials(permissions, permissionsType, (error, credentials) => {
+          if (error) {
+            reject(error);
+          } else {
+            resolve(credentials);
+          }
+        });
+    })
   }
 
-  static getTwitterSystemAccounts(cb = () => {}) {
+  static getTwitterSystemAccounts() {
     if (React.Platform.OS === 'android') {
-      console.warn('SocialAuth.getTwitterSystemAccounts is not supported for android');
-      return;
+      return Promise.reject({
+        message: 'SocialAuth.getTwitterSystemAccounts is not supported for android',
+      });
     }
 
-    RNSocialAuthManager.getTwitterSystemAccounts(cb);
+    return new Promise((resolve, reject) => {
+      RNSocialAuthManager.getTwitterSystemAccounts((error, accounts) => {
+        if (error) {
+          reject(error);
+        } else {
+          resolve(accounts);
+        }
+      });
+    })
   }
 
-  static getTwitterCredentials(userName = null, reverseAuthResponse = '', cb = () => {}) {
+  static getTwitterCredentials(userName = null, reverseAuthResponse = '') {
     if (React.Platform.OS === 'android') {
-      console.warn();('SocialAuth.getTwitterCredentials is not supported for android');
-      return;
-    }
-
-    if (arguments.length === 2) {
-      cb = arguments[1] || (() => {});
-      reverseAuthResponse = '';
+      return Promise.reject({
+        message: 'SocialAuth.getTwitterCredentials is not supported for android',
+      });
     }
 
     if (userName) {
-      RNSocialAuthManager.getTwitterCredentials(userName, reverseAuthResponse, cb);
+      return new Promise((resolve, reject) => {
+        RNSocialAuthManager.getTwitterCredentials(userName, reverseAuthResponse, (error, credentials) => {
+          if (error) {
+            reject(error);
+          } else {
+            resolve(credentials);
+          }
+        });
+      })
+    } else {
+      return Promise.reject({
+        message: 'SocialAuth.getTwitterCredentials: userName is required',
+      })
     }
   }
 }

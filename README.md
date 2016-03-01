@@ -54,40 +54,33 @@ npm install react-native-social-auth
 SocialAuth.setFacebookApp({id: 'APP_ID', name: 'DISPLAY_NAME'});
 ```
 
-#### getFacebookCredentials(permissions, permissionsType, cb)
+#### getFacebookCredentials(permissions, permissionsType)
   - `permissions` (Array of strings)
   - `permissionsType` (one of [facebookPermissionsType](#constants))
-  - `cb(error, credentials)`
-    - `error` (object contains `code` and `message`)
-    - `credentials` (object contains `accessToken`, `userId`, `hasWritePermissions`)
+
+##### returns a promise
+  - __resolved__ with `credentials` (object contains `accessToken`, `userId`, `hasWritePermissions`)
+  - __rejected__ with `error` (object contains `code` and `message`)
 
 ```javascript
 
-SocialAuth.getFacebookCredentials(["email", "user_friends"], SocialAuth.facebookPermissionsType.read, (error, credentials) => {
-  if (error) {
-    console.log(error);
-  } else {
-    console.log(credentials);
-  }
-});
+SocialAuth.getFacebookCredentials(["email", "user_friends"], SocialAuth.facebookPermissionsType.read)
+.then((credentials) => console.log(credentials));
+.catch((error) => console.log(error))
 ```
 
-#### getTwitterSystemAccounts(cb)
-  - `cb(error, accounts)`
-    - `error` (object contains `code` and `message`)
-    - `accounts` (array of objects like `{username: "userName"}`)
+#### getTwitterSystemAccounts()
+##### returns a promise
+  - __resolved__ with `accounts` (array of objects like `{username: "userName"}`)
+  - __rejected__ with `error` (object contains `code` and `message`)
 
 ```javascript
-SocialAuth.getTwitterSystemAccounts((error, accounts) => {
-  if (error) {
-    console.log(error);
-  } else {
-    console.log(accounts);
-  }
-});
+SocialAuth.getTwitterSystemAccounts()
+.then((accounts) => console.log(accounts));
+.catch((error) => console.log(error))
 ```
 
-#### getTwitterCredentials(username, [reverseAuthResponse], cb)
+#### getTwitterCredentials(username, [reverseAuthResponse])
   - `username` (Twitter account user name without `@`)
   - `reverseAuthResponse` (is a string that returns by twitter's api when we do the first part of reverse auth)
     - __you can define `key` and `secret` of your twitter app in [RNSocialAuthManager.m](ios/RNSocialAuthManager.m)__
@@ -104,18 +97,14 @@ SocialAuth.getTwitterSystemAccounts((error, accounts) => {
       ```
       Then you just pass it to the function as a second parameter
 
-  - `cb(error, credentials)`
-    - `error` (object contains `code` and `message`)
-    - `credentials` (object contains `oauthToken`, `oauthTokenSecret`, `userName`)
+##### returns a promise
+  - __resolved__ with `credentials` (object contains `oauthToken`, `oauthTokenSecret`, `userName`)
+  - __rejected__ with `error` (object contains `code` and `message`)
 
 ```javascript
-SocialAuth.getTwitterCredentials("dimkol", (error, credentials) => {
-  if (error) {
-    console.log(error);
-  } else {
-    console.log(credentials);
-  }
-});
+SocialAuth.getTwitterCredentials("dimkol")
+.then((credentials) => console.log(credentials))
+.catch((error) => console.log(error));
 ```
 
 ## Contributing
