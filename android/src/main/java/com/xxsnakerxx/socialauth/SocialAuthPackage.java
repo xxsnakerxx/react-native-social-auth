@@ -15,19 +15,14 @@ import java.util.Collections;
 import java.util.List;
 
 public class SocialAuthPackage implements ReactPackage {
-
-    private Context mContext;
-    private SocialAuthModule mModuleInstance;
-
-    public SocialAuthPackage(Context activityContext) {
-        mContext = activityContext;
-    }
-
     @Override
-    public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
-        mModuleInstance = new SocialAuthModule(reactContext, mContext);
+    public List<NativeModule> createNativeModules(
+            ReactApplicationContext reactContext) {
+        List<NativeModule> modules = new ArrayList<>();
 
-        return Arrays.<NativeModule>asList(mModuleInstance);
+        modules.add(new SocialAuthModule(reactContext));
+
+        return modules;
     }
 
     @Override
@@ -38,13 +33,5 @@ public class SocialAuthPackage implements ReactPackage {
     @Override
     public List<ViewManager> createViewManagers(ReactApplicationContext reactContext) {
         return Collections.emptyList();
-    }
-
-    public boolean handleActivityResult(final int requestCode, final int resultCode, final Intent data) {
-        if (mModuleInstance == null) {
-            return false;
-        }
-
-        return mModuleInstance.handleActivityResult(requestCode, resultCode, data);
     }
 }

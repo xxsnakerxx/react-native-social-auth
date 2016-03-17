@@ -15,6 +15,7 @@ import com.facebook.FacebookSdk;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 
+import com.facebook.react.bridge.ActivityEventListener;
 import com.facebook.react.bridge.Arguments;
 import com.facebook.react.bridge.Callback;
 import com.facebook.react.bridge.NativeModule;
@@ -31,12 +32,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class SocialAuthModule extends ReactContextBaseJavaModule {
+public class SocialAuthModule extends ReactContextBaseJavaModule implements ActivityEventListener {
 
   public static final String REACT_CLASS = "RNSocialAuthManager";
   public static final int TWITTER_OAUTH_REQUEST = 1;
 
-  private Context mActivityContext;
   private AccountManager accountManager;
   private String requestedTwitterAccountName;
   private CallbackManager fbCallbackManager;
@@ -49,14 +49,16 @@ public class SocialAuthModule extends ReactContextBaseJavaModule {
     return REACT_CLASS;
   }
 
-  public boolean handleActivityResult(final int requestCode, final int resultCode, final Intent data) {
-    return fbCallbackManager.onActivityResult(requestCode, resultCode, data);
+  public void onActivityResult(final int requestCode, final int resultCode, final Intent data) {
+    fbCallbackManager.onActivityResult(requestCode, resultCode, data);
   }
 
-  public SocialAuthModule(ReactApplicationContext reactContext, Context activityContext) {
+  public SocialAuthModule(ReactApplicationContext reactContext) {
     super(reactContext);
 
-    mActivityContext = activityContext;
+    reactContext.addActivityEventListener(this);
+
+    FacebookSdk.sdkInitialize(getReactApplicationContext());
 
     fbCallbackManager = CallbackManager.Factory.create();
 
@@ -150,10 +152,10 @@ public class SocialAuthModule extends ReactContextBaseJavaModule {
     fbRNCallback = callback;
 
     if (permissionsType.equals("write")) {
-      loginManager.logInWithPublishPermissions((Activity) mActivityContext, _permissions);
+      loginManager.logInWithPublishPermissions(getCurrentActivity(), _permissions);
     }
     else {
-      loginManager.logInWithReadPermissions((Activity) mActivityContext, _permissions);
+      loginManager.logInWithReadPermissions(getCurrentActivity(), _permissions);
     }
   }
 }
