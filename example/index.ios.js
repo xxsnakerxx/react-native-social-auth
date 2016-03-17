@@ -30,30 +30,51 @@ class socialAuthExample extends React.Component {
   componentDidMount() {}
 
   _getFBCredentials() {
-    SocialAuth.getFacebookCredentials(['email', 'public_profile'], SocialAuth.facebookPermissionsType.read, (error, credentials) => {
+    SocialAuth.getFacebookCredentials(['email', 'public_profile'], SocialAuth.facebookPermissionsType.read)
+    .then((credentials) => {
       this.setState({
-        error,
+        error: null,
         credentials,
       })
-    });
+    })
+    .catch((error) => {
+      this.setState({
+        error,
+        credentials: null,
+      })
+    })
   }
 
   _getTWSystemAccounts() {
-    SocialAuth.getTwitterSystemAccounts((error, accounts) => {
+    SocialAuth.getTwitterSystemAccounts()
+    .then((accounts) => {
+      this.setState({
+        error: null,
+        credentials: accounts,
+      })
+    })
+    .catch((error) => {
       this.setState({
         error,
-        credentials: accounts,
+        credentials: null,
       })
     })
   }
 
   _getTWCredentials() {
-    SocialAuth.getTwitterCredentials('snakerxx', (error, credentials) => {
+    SocialAuth.getTwitterCredentials('snakerxx')
+    .then((credentials) => {
       this.setState({
-        error,
+        error: null,
         credentials,
       })
-    });
+    })
+    .catch((error) => {
+      this.setState({
+        error,
+        credentials: null,
+      })
+    })
   }
 
   render() {
