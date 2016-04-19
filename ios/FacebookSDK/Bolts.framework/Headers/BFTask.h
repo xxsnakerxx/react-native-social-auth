@@ -29,6 +29,18 @@ extern NSInteger const kBFMultipleErrorsError;
  */
 extern NSString *const BFTaskMultipleExceptionsException;
 
+/*!
+ An error userInfo key used if there were multiple errors on <BFTask taskForCompletionOfAllTasks:>.
+ Value type is `NSArray<NSError *> *`.
+ */
+extern NSString *const BFTaskMultipleErrorsUserInfoKey;
+
+/*!
+ An error userInfo key used if there were multiple exceptions on <BFTask taskForCompletionOfAllTasks:>.
+ Value type is `NSArray<NSException *> *`.
+ */
+extern NSString *const BFTaskMultipleExceptionsUserInfoKey;
+
 @class BFExecutor;
 @class BFTask;
 
@@ -81,6 +93,14 @@ typedef __nullable id(^BFContinuationBlock)(BFTask<ResultType> *task);
  @param tasks An `NSArray` of the tasks to use as an input.
  */
 + (instancetype)taskForCompletionOfAllTasksWithResults:(nullable NSArray<BFTask *> *)tasks;
+
+/*!
+ Returns a task that will be completed once there is at least one successful task.
+ The first task to successuly complete will set the result, all other tasks results are 
+ ignored.
+ @param tasks An `NSArray` of the tasks to use as an input.
+ */
++ (instancetype)taskForCompletionOfAnyTask:(nullable NSArray<BFTask *> *)tasks;
 
 /*!
  Returns a task that will be completed a certain amount of time in the future.
