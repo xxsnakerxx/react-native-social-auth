@@ -1,6 +1,8 @@
-import React from 'react-native';
-
-const { NativeModules } = React;
+import {
+  NativeModules,
+  Platform,
+ } from 'react-native';
+ 
 const { RNSocialAuthManager } = NativeModules;
 
 const _app = {
@@ -38,7 +40,7 @@ export default class SocialAuth {
   }
 
   static getTwitterSystemAccounts() {
-    if (React.Platform.OS === 'android') {
+    if (Platform.OS === 'android') {
       return Promise.reject({
         message: 'SocialAuth.getTwitterSystemAccounts is not supported for android',
       });
@@ -56,7 +58,7 @@ export default class SocialAuth {
   }
 
   static getTwitterCredentials(userName = null, reverseAuthResponse = '') {
-    if (React.Platform.OS === 'android') {
+    if (Platform.OS === 'android') {
       return Promise.reject({
         message: 'SocialAuth.getTwitterCredentials is not supported for android',
       });

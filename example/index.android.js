@@ -1,13 +1,13 @@
-import React from 'react-native';
+import React from 'react';
 
-const {
+import {
   AppRegistry,
   StyleSheet,
   Text,
   View,
   TouchableOpacity,
   Dimensions,
-} = React;
+} from 'react-native';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
 

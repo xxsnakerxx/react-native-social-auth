@@ -1,13 +1,13 @@
-import React from 'react-native';
+import React from 'react';
 
-const {
+import {
   AppRegistry,
   StyleSheet,
   Text,
   View,
   TouchableOpacity,
   Modal,
-} = React;
+} from 'react-native';
 
 import SocialAuth from 'react-native-social-auth';
 

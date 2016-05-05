@@ -6,6 +6,7 @@
 ![preview](images/social_auth_example.gif)
 
 ## Table of contents
+- [Dependencies](#dependencies)
 - [What using](#what-using)
 - [Installation](#installation)
   - [Common](#common)
@@ -14,6 +15,9 @@
 - [Usage](#usage)
 - [Contributing](#contributing)
 - [Copyright and license](#copyright-and-license)
+
+## Dependencies
+- React Native >= `0.25.1`
 
 ## What using
 - `facebook`
