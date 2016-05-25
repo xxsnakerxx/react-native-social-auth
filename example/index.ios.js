@@ -100,7 +100,7 @@ class socialAuthExample extends React.Component {
         </TouchableOpacity>
         <Modal
           transparent={false}
-          animated={true}
+          animationType={'slide'}
           visible={!!(this.state.error || this.state.credentials)}>
           <View style={styles.modal}>
             {this.state.error ?
