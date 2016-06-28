@@ -111,7 +111,9 @@ RCT_EXPORT_METHOD(getFacebookCredentials:(NSArray*)permissions
                            }]);
         }
     };
-    
+
+    [loginManager logOut];
+
     if ([permissionsType isEqualToString:@"write"]) {
         [loginManager logInWithPublishPermissions:permissions fromViewController:nil handler:handler];
     }
