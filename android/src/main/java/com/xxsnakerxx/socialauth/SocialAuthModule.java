@@ -151,6 +151,8 @@ public class SocialAuthModule extends ReactContextBaseJavaModule implements Acti
     fbRequestedPermissionsType = permissionsType;
     fbRNCallback = callback;
 
+    loginManager.logOut();
+
     if (permissionsType.equals("write")) {
       loginManager.logInWithPublishPermissions(getCurrentActivity(), _permissions);
     }
