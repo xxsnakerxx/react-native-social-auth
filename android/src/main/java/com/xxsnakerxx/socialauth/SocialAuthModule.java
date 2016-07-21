@@ -49,6 +49,10 @@ public class SocialAuthModule extends ReactContextBaseJavaModule implements Acti
     return REACT_CLASS;
   }
 
+  @Override
+  public void onNewIntent(Intent intent) {}
+
+  @Override
   public void onActivityResult(final int requestCode, final int resultCode, final Intent data) {
     fbCallbackManager.onActivityResult(requestCode, resultCode, data);
   }
