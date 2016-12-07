@@ -1,8 +1,8 @@
 ## iOS setup
 
 1. Link the library
-  - by using `rnpm link` (__recommended__) ([rnpm](https://github.com/rnpm/rnpm)) (after go to step [Facebook setup](#facebook))
-  - or `manual` (see next steps)
+- by using `react-native link` (__recommended__) (after go to step [Facebook setup](#facebook))
+- or `manual` (see next steps)
 2. Open `node_modules/react-native-social-auth` folder
 3. Drag `RNSocialAuth.xcodeproj` into your Libraries group
 4. Select your `main project` in the navigator to bring up settings
@@ -11,9 +11,9 @@
 7. Find and add `libRNSocialAuth.a` under the Workspace group
 
 ### Facebook
-8. Configure your `.plist` file as described [here](https://developers.facebook.com/docs/ios/getting-started/#xcode) and [here(__for iOS9 only__)](https://developers.facebook.com/docs/ios/ios9)
- or you can use `setFacebookApp` method provided the API
- (__Using `setFacebookApp` method you are still must define custom URL scheme in your `info.plist`!!! If you are using a few environments (e.g. staging, production) you can define URL Schemes(`'fb'+APP_ID` string) for both of them and set needed app id and name using this method__)
+8. Configure your `.plist` file as described [here](https://developers.facebook.com/docs/ios/getting-started/#xcode) and [here(__for >iOS9 only__)](https://developers.facebook.com/docs/ios/ios9)
+    or you can use `setFacebookApp` method provided the API
+    (__Using `setFacebookApp` method you are still must define custom URL scheme in your `info.plist`!!! If you are using a few environments (e.g. staging, production) you can define URL Schemes(`'fb'+APP_ID` string) for both of them and set needed app id and name using this method__)
 9. Under `Build Settings` of your main project scroll down to `Search Paths`
 10. Add the following path to your `Header Search Paths`
 ```

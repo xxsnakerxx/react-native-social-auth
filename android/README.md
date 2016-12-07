@@ -1,8 +1,8 @@
 ## Android setup
 
 1. Link the library
-  - by using `rnpm link` ([rnpm](https://github.com/rnpm/rnpm)) (but need some changes, go to step 5)
-  - or `manual` (see next steps)
+- by using `react-native link` (__recommended__) (but need some changes, go to step 5)
+- or `manual` (see next steps)
 2. Open `android/settings.gradle` file and add following
 ```
 ...
