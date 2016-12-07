@@ -6,11 +6,8 @@
     "start": "node_modules/react-native/packager/packager.sh"
   },
   "dependencies": {
-    "react": "^15.0.2",
-    "react-native": "^0.26.2",
+    "react": "^15.4.1",
+    "react-native": "^0.38.1",
     "react-native-social-auth": "file:../"
-  },
-  "devDependencies": {
-    "rnpm-plugin-upgrade": "^0.26.0"
   }
 }
