@@ -254,9 +254,7 @@ RCT_EXPORT_METHOD(getTwitterCredentials:(NSString *)userName
                     
                     request.HTTPBody = [@"x_auth_mode=reverse_auth" dataUsingEncoding:NSUTF8StringEncoding];
                     
-                    NSURLResponse *response;
-                    
-                    NSData *urlData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:nil];
+                    NSData *urlData = [[self class] requestSynchronousData:request];
                     
                     reverseAuthResponseString = [[NSString alloc] initWithData:urlData encoding:NSUTF8StringEncoding];
                 }
@@ -380,8 +378,11 @@ RCT_EXPORT_METHOD(getTwitterCredentials:(NSString *)userName
 
 + (NSString *)percentDecodeString:(NSString *)string
 {
-    return (NSString *)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(
-                                                                                 NULL,                                                                                    (CFStringRef)string,                                                                                   NULL,                                                                                    (CFStringRef)@"!*'();:@&=+$,/?%#[]",                                                                                    kCFStringEncodingUTF8 ));
+    NSCharacterSet * queryKVSet = [NSCharacterSet
+                                   characterSetWithCharactersInString:@"!*'();:@&=+$,/?%#[]"
+                                   ].invertedSet;
+    
+    return [string stringByAddingPercentEncodingWithAllowedCharacters:queryKVSet];
 }
 
 + (NSString *)hmacsha1:(NSString *)string withKey:(NSString *)key;
@@ -396,6 +397,24 @@ RCT_EXPORT_METHOD(getTwitterCredentials:(NSString *)userName
     NSData *HMAC = [[NSData alloc] initWithBytes:cHMAC length:sizeof(cHMAC)];
 
     return [HMAC base64EncodedStringWithOptions:0];
+}
+
++ (NSData *)requestSynchronousData:(NSURLRequest *)request
+{
+    __block NSData *data = nil;
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request completionHandler:^(NSData *taskData, NSURLResponse *response, NSError *error) {
+        data = taskData;
+        if (!data) {
+            NSLog(@"%@", error);
+        }
+        dispatch_semaphore_signal(semaphore);
+        
+    }];
+    [dataTask resume];
+    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+    return data;
 }
 
 @end
