@@ -39,7 +39,7 @@ return YES;
 }
 ```
 12. Open `node_modules/react-native-social-auth/ios/FacebookSDK` folder
-13. Drag `FBSDKCoreKit.framework` and `FBSDKLoginKit.framework` into your project
+13. Drag `FBSDKCoreKit.framework` , `FBSDKLoginKit.framework` and `Bolts.framework` into your project
 14. Add the following path to your `Framework Search Paths`
 ```
 $(SRCROOT)/../node_modules/react-native-social-auth/ios/FacebookSDK
