@@ -20,6 +20,7 @@
 $(SRCROOT)/../node_modules/react-native-social-auth/ios
 ```
 __Note__: You can skip this step if you linked the lib with ([rnpm](https://github.com/rnpm/rnpm))
+
 11. Modify your AppDelegate.m
 ```
 #import "RNSocialAuthManager.h"
