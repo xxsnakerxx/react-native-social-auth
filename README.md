@@ -80,8 +80,8 @@ SocialAuth.getFacebookCredentials(["email", "user_friends"], SocialAuth.facebook
 
 ```javascript
 SocialAuth.getTwitterSystemAccounts()
-.then((accounts) => console.log(accounts));
-.catch((error) => console.log(error))
+.then((accounts) => console.log(accounts))
+.catch((error) => console.log(error));
 ```
 
 #### getTwitterCredentials(username, [reverseAuthResponse])
@@ -94,8 +94,8 @@ SocialAuth.getTwitterSystemAccounts()
     ```
     #### But this way is not SAFE!
 
-    - other option is that your backed can perform the first part of reverse auth and send you back response of it.
-      It's looks like this
+    - other option is that your server can perform the first part of reverse auth and send you back response of it.
+      It looks like this
       ```
       OAuth oauth_timestamp="...", oauth_signature="...", oauth_consumer_key="...", oauth_nonce="...", oauth_token="...", oauth_signature_method="HMAC-SHA1", oauth_version="1.0"
       ```
