@@ -95,7 +95,7 @@ SocialAuth.getTwitterSystemAccounts()
     #### But this way is not SAFE!
 
     - other option is that your server can perform the first part of reverse auth and send you back response of it.
-      It's looks like this
+      It looks like this
       ```
       OAuth oauth_timestamp="...", oauth_signature="...", oauth_consumer_key="...", oauth_nonce="...", oauth_token="...", oauth_signature_method="HMAC-SHA1", oauth_version="1.0"
       ```
