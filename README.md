@@ -8,11 +8,14 @@
 ## Table of contents
 - [Dependencies](#dependencies)
 - [What using](#what-using)
+- [Example](example#readme)
 - [Installation](#installation)
   - [Common](#common)
   - [iOS](ios#readme)
   - [Android](android#readme)
 - [Usage](#usage)
+  - [Facebook](#facebook)
+  - [Twitter](#twitter)
 - [Contributing](#contributing)
 - [Copyright and license](#copyright-and-license)
 
@@ -25,28 +28,33 @@
 - `twitter`
 	- __Accounts.framework and reverse auth (iOS)__
 
+## Example
+  [here](example#readme)
+
 ## Installation
 
 ### Common
 1. Install package via npm:
 
-```javascript
-npm install react-native-social-auth
-```
+  ```javascript
+    npm install react-native-social-auth
+  ```
 
-2. Perform platform specific setup
-  - [iOS](ios#readme)
-  - [Android](android#readme)
-
-3. Inside your code include JS part by adding
+2. Inside your code include JS part by adding
 
   ```javascript
   import SocialAuth from 'react-native-social-auth';
   ```
 
-4. Compile and have fun! Or go to [example](example) and see how it works.
+ Perform platform specific setup
+    - [iOS](ios#readme)
+    - [Android](android#readme)
+
+
 
 ## Usage
+
+### Facebook
 
 #### Constants
   - `SocialAuth.facebookPermissionsType.read`
@@ -72,6 +80,7 @@ SocialAuth.getFacebookCredentials(["email", "user_friends"], SocialAuth.facebook
 .then((credentials) => console.log(credentials));
 .catch((error) => console.log(error))
 ```
+### Twitter
 
 #### getTwitterSystemAccounts()
 ##### returns a promise
