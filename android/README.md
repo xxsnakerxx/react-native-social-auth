@@ -1,8 +1,10 @@
-## Android setup
+### Android setup
 
-1. Link the library
-- by using `react-native link` (__recommended__) (but need some changes, go to step 5)
-- or `manual` (see next steps)
+#### Link
+By using `react-native link` ( __recommended__ ) [Next Step](facebook)
+
+#### Manual
+
 2. Open `android/settings.gradle` file and add following
 ```
 ...
@@ -20,26 +22,26 @@ dependencies {
 
 4. Register React Package
 
-```
-...
-import com.xxsnakerxx.socialauth.SocialAuthPackage; // import
+  ```
+  ...
+  import com.xxsnakerxx.socialauth.SocialAuthPackage; // import
 
-public class MainActivity extends ReactActivity {
-...
-  /**
-   * A list of packages used by the app. If the app uses additional views
-   * or modules besides the default ones, add more packages here.
-   */
-  @Override
-  protected List<ReactPackage> getPackages() {
-      return Arrays.<ReactPackage>asList(
-          new MainReactPackage(),
-          new SocialAuthPackage() // <-- Add this line
-      );
+  public class MainActivity extends ReactActivity {
+  ...
+    /**
+     * A list of packages used by the app. If the app uses additional views
+     * or modules besides the default ones, add more packages here.
+     */
+    @Override
+    protected List<ReactPackage> getPackages() {
+        return Arrays.<ReactPackage>asList(
+            new MainReactPackage(),
+            new SocialAuthPackage() // <-- Add this line
+        );
+    }
+  ...
   }
-...
-}
-```
+  ```
 
 ### Facebook
 
