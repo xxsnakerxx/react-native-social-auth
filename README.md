@@ -20,7 +20,8 @@
 - [Copyright and license](#copyright-and-license)
 
 ## Dependencies
-- React Native >= `0.25.1`
+- React Native >= `0.40.0` (use `0.5` branch that works with previous versions of RN)
+
 
 ## What using
 - `facebook`
