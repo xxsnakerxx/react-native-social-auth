@@ -16,7 +16,7 @@ android {
 
   defaultConfig {
     minSdkVersion 16
-    targetSdkVersion 23
+    targetSdkVersion 25
     versionCode 1
     versionName "1.0"
   }
@@ -36,7 +36,8 @@ repositories {
 
 dependencies {
   compile 'com.facebook.react:react-native:+'
-  compile "com.android.support:support-v4:25.0.1"
+  compile "com.android.support:support-v4:25.3.1"
+  compile "com.android.support:recyclerview-v7:25.3.1"
   compile ('com.facebook.android:facebook-android-sdk:4+') {
     exclude module: 'bolts-tasks'
     exclude module: 'bolts-applinks'
